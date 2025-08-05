@@ -30,12 +30,12 @@ This task will help you ensure that the Dynamic Group and Policy are correctly d
     ![Create Dynamic group](images/create_dg.png)
 1. Add below rules to the dynamic group.
 
-   ```
-   <copy>
-    all {resource.type='datasciencenotebooksession', resource.compartment.id='OCID of the Compartment'}
-    ALL {resource.type='genaiagent',resource.compartment.id='OCID of the Compartment'}
-    </copy>
-   ```
+    ```
+    <copy>
+        all {resource.type='datasciencenotebooksession', resource.compartment.id='OCID of the Compartment'}
+        ALL {resource.type='genaiagent',resource.compartment.id='OCID of the Compartment'}
+        </copy>
+    ```
 1. Create the dynamic group.
 
     ![Created group](images/created_dg.png)
@@ -62,18 +62,18 @@ The tasks will help you to associate necessary policies with the dynamic group
 1. Click *Show manual editor* option.
 1. Add below policy statements,ensure to update OCI accordingly.
 
-   ```
-   <copy>
-    allow dynamic-group <OCID of the Dynamic group> to manage genai-agent-family in compartment id <OCID of the compartment>
-    allow any-user to manage genai-agent-family in compartment id <OCID of the compartment>  where ALL {request.principal.type = 'datasciencenotebooksession'}
-    allow dynamic-group <OCID of the Dynamic group> to read database-tools-family compartment id <OCID of the compartment>
-    allow dynamic-group <OCID of the Dynamic group> to read secret-bundle in compartment id <OCID of the compartment>
-    allow dynamic-group <OCID of the Dynamic group> to use database-tools-connections in compartment id <OCID of the compartment>
-    allow dynamic-group <OCID of the Dynamic group> to use database-family in compartment id <OCID of the compartment>
-    allow dynamic-group <OCID of the Dynamic group> to use object-family in compartment id <OCID of the compartment>
-    allow dynamic-group <OCID of the Dynamic group> to manage  all-resources  in compartment id <OCID of the compartment> 
-   </copy>
-   ```
+    ```
+    <copy>
+        allow dynamic-group <OCID of the Dynamic group> to manage genai-agent-family in compartment id <OCID of the compartment>
+        allow any-user to manage genai-agent-family in compartment id <OCID of the compartment>  where ALL {request.principal.type = 'datasciencenotebooksession'}
+        allow dynamic-group <OCID of the Dynamic group> to read database-tools-family compartment id <OCID of the compartment>
+        allow dynamic-group <OCID of the Dynamic group> to read secret-bundle in compartment id <OCID of the compartment>
+        allow dynamic-group <OCID of the Dynamic group> to use database-tools-connections in compartment id <OCID of the compartment>
+        allow dynamic-group <OCID of the Dynamic group> to use database-family in compartment id <OCID of the compartment>
+        allow dynamic-group <OCID of the Dynamic group> to use object-family in compartment id <OCID of the compartment>
+        allow dynamic-group <OCID of the Dynamic group> to manage  all-resources  in compartment id <OCID of the compartment> 
+    </copy>
+    ```
 1. Click create and validate.
 
     ![Validate policy](images/validate_policies.png)
@@ -84,7 +84,7 @@ The tasks allows your to create our VCN that we will use for various transaction
 
 1. From OCI console ,select Network > *Virtual Cloud Networks*
 
-    ![VCN View] (images/vcn_view.png)
+    ![VCN View](images/vcn_view.png)
 
 1. Click *Actions* > *Start VCN Wizard*.
 
